@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="login">
     <div class="grid-container">
-        <input type="text" v-model="username" name="username" placeholder="Username">      
+        <input type="text" v-model="username" name="username" placeholder="Email">      
     </div>
     <div class="grid-container">
         <input class="text" type="password" v-model="password" name="password" placeholder="Password">
@@ -29,8 +29,8 @@ export default {
     login(){
       axios.post(`http://127.0.0.1:5001/login`, {}, {
         auth: {
-          username: 'Admin',
-          password: 'admin'
+          username: this.username,
+          password: this.password
         }
       }).then(response => {
         this.posts = response.data;
