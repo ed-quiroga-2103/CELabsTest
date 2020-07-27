@@ -2,7 +2,7 @@
   <div id="app">
     <!-- LogIn / -->
     <!-- Register / -->
-    <LogIn />
+    <Reservation />
   </div>
 </template>
 
@@ -10,12 +10,14 @@
 <script>
 import LogIn from './components/LogIn';
 import Register from './components/Register';
+import Reservation from './components/Reservation';
 
 export default {
   name: 'App',
   components: {
-    LogIn
+    //LogIn
     //Register
+    Reservation
   }
 }
 </script>
