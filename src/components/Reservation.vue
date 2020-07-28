@@ -61,12 +61,23 @@ export default {
   methods: {
     reservation()
     {
-        var data = JSON.stringify({"name":"Racso","password":"12345"});
+        var data = JSON.stringify(
+
+          {"request_date":this.request_date,
+          "requested_date":this.requested_date,
+          "init_time": this.init_time,
+          "final_time": this.final_time,
+          "subject": this.subject,
+          "description": this.description,
+          "operator": this.operator
+          }
+
+          );
         var config = {
         method: 'post',
         url: 'http://127.0.0.1:5001/reservation',
         headers: { 
-            'x-access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiI0MmM3MDhhYS1mY2NhLTRlYzctYjNjYy0zMDQwOTIyMzMxMmEiLCJleHAiOjE1OTU4ODM4MTJ9.MTiecaIaAaaexu-SNbYPyHKb0AAvWasyKKaPn4KjzGw', 
+            'x-access-token': this.token, 
             'Authorization': 'Basic QWRtaW46MTIzNDU=', 
             'Content-Type': 'application/json'
         },
@@ -78,7 +89,9 @@ export default {
         this.posts = response.data;
         console.log(this.posts['message']);
       }
-      );
+      ).catch(error =>{
+        console.log(error.data['message'])
+      });
     }
   }
 }

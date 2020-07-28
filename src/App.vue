@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!-- LogIn / -->
-    <!-- Register / -->
     <Reservation />
+    <!-- Register / -->
+    <!-- <Reservation /> -->
   </div>
 </template>
 
