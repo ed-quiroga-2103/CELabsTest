@@ -7,6 +7,9 @@
     <div class="grid-container">
         <input type="text" v-model="requested_date" name="requested_date" placeholder="Requested Date">      
     </div>
+    <div class="grid-container">
+        <input type="text" v-model="requesting_user" name="requesting_user" placeholder="Requesting User">      
+    </div>
 
     <div class="grid-container">
         <input type="text" v-model="init_time" name="init_time" placeholder="Initialization Time">      
@@ -22,6 +25,10 @@
 
     <div class="grid-container">
         <input type="text" v-model="description" name="description" placeholder="Description">      
+    </div>
+
+    <div class="grid-container">
+        <input type="text" v-model="lab" name="lab" placeholder="Laboratory">      
     </div>
 
     <div class="grid-container">
@@ -47,10 +54,12 @@ export default {
     return{
       request_date: '',
       requested_date: '',
+      requesting_user: '',
       init_time: '',
       final_time: '',
       subject: '',
       description: '',
+      lab: '',
       operator: '',
       token: '',
       posts: [],
@@ -65,10 +74,12 @@ export default {
 
           {"request_date":this.request_date,
           "requested_date":this.requested_date,
+          "requesting_user":this.requesting_user,
           "init_time": this.init_time,
           "final_time": this.final_time,
           "subject": this.subject,
           "description": this.description,
+          "lab": this.lab,
           "operator": this.operator
           }
 
