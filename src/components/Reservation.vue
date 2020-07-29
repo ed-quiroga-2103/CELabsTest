@@ -84,13 +84,8 @@ export default {
           "final_time": this.final_time,
           "subject": this.subject,
           "description": this.description,
-<<<<<<< HEAD
-          "operator": this.operator,
-          "teacher_admin":this.teacher_admin
-=======
           "lab": this.lab,
           "operator": this.operator
->>>>>>> b23a39a822e092b011d4d609de18ac6c7956d2b0
           }
         
           );

@@ -18,7 +18,7 @@ import Worklog from './components/Worklog'
 export default {
   name: 'App',
   components: {
-    //LogIn
+    //ogIn
     Worklog
     //Reservation
     //Palmadas

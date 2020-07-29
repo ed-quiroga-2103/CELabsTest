@@ -36,7 +36,7 @@ export default {
       date_time: '',
       init_time: '',
       final_time: '',
-      descrioption: '',
+      description: '',
       token: '',
       posts: [],
       errors: [],
