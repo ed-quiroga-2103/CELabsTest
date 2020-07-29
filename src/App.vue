@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <Reservation />
-    <!-- Register / -->
-    <!-- <Reservation /> -->
+    <!-- LogIn /-->
+    <Worklog/>
+    <!--Reservation /-->
+    <!--Palmadas /-->
   </div>
 </template>
 
@@ -11,13 +12,16 @@
 import LogIn from './components/LogIn';
 import Register from './components/Register';
 import Reservation from './components/Reservation';
+import Palmadas from './components/Palmadas'
+import Worklog from './components/Worklog'
 
 export default {
   name: 'App',
   components: {
     //LogIn
-    //Register
-    Reservation
+    Worklog
+    //Reservation
+    //Palmadas
   }
 }
 </script>

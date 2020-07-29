@@ -1,11 +1,11 @@
 <template>
-  <form @submit.prevent="reservation">
+  <form @submit.prevent="palmadas">
     <div class="grid-container">
         <input type="text" v-model="request_date" name="request_date" placeholder="Request Date">      
     </div>
 
     <div class="grid-container">
-        <input type="text" v-model="requested_date" name="requested_date" placeholder="Requested Date">      
+        <input type="text" v-model="reserved_date" name="reserved_date" placeholder="Reserved Date">      
     </div>
 
     <div class="grid-container">
@@ -21,50 +21,35 @@
     </div>
 
     <div class="grid-container">
-        <input type="text" v-model="description" name="description" placeholder="Description">      
-    </div>
-
-    <div class="grid-container">
-        <input type="text" v-model="operator" name="operator" placeholder="Operator">      
-    </div>
-
-    <div class="grid-container">
-        <input type="text" v-model="teacher_admin" name="teacher_admin" placeholder=" Reserved for the Teacher/Administrative">      
-    </div>
-
-    <div class="grid-container">
         <input type="text" v-model="token" name="token" placeholder="Token">      
     </div>
 
     <div class="grid-container">
-        <input type="submit" value="Made Reservation" class="btn">
+        <input type="submit" value="Send AllNighter Request" class="btn">
     </div>
   </form>
-</template>s
+</template>
 
 <script>
 import axios from 'axios';
 
 export default {
-  name: 'Reservation',
+  name: 'Palmadas',
   data(){
     return{
       request_date: '',
-      requested_date: '',
+      reserved_date: '',
       init_time: '',
       final_time: '',
       subject: '',
-      description: '',
-      operator: '',
       token: '',
-      teacher_admin: '',
       posts: [],
       errors: [],
     }
   },
 
   methods: {
-    reservation()
+    palmadas()
     {
         var data = JSON.stringify(
 

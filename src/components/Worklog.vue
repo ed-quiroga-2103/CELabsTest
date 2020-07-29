@@ -1,11 +1,7 @@
 <template>
-  <form @submit.prevent="reservation">
+  <form @submit.prevent="worklog">
     <div class="grid-container">
-        <input type="text" v-model="request_date" name="request_date" placeholder="Request Date">      
-    </div>
-
-    <div class="grid-container">
-        <input type="text" v-model="requested_date" name="requested_date" placeholder="Requested Date">      
+        <input type="text" v-model="date_time" name="date_time" placeholder="Date/Time">      
     </div>
 
     <div class="grid-container">
@@ -17,19 +13,7 @@
     </div>
 
     <div class="grid-container">
-        <input type="text" v-model="subject" name="subject" placeholder="Subject">      
-    </div>
-
-    <div class="grid-container">
         <input type="text" v-model="description" name="description" placeholder="Description">      
-    </div>
-
-    <div class="grid-container">
-        <input type="text" v-model="operator" name="operator" placeholder="Operator">      
-    </div>
-
-    <div class="grid-container">
-        <input type="text" v-model="teacher_admin" name="teacher_admin" placeholder=" Reserved for the Teacher/Administrative">      
     </div>
 
     <div class="grid-container">
@@ -37,51 +21,43 @@
     </div>
 
     <div class="grid-container">
-        <input type="submit" value="Made Reservation" class="btn">
+        <input type="submit" value="Send Hours Report" class="btn">
     </div>
   </form>
-</template>s
+</template>
 
 <script>
 import axios from 'axios';
 
 export default {
-  name: 'Reservation',
+  name: 'Worklog',
   data(){
     return{
-      request_date: '',
-      requested_date: '',
+      date_time: '',
       init_time: '',
       final_time: '',
-      subject: '',
-      description: '',
-      operator: '',
+      descrioption: '',
       token: '',
-      teacher_admin: '',
       posts: [],
       errors: [],
     }
   },
 
   methods: {
-    reservation()
+    worklog()
     {
         var data = JSON.stringify(
 
-          {"request_date":this.request_date,
-          "requested_date":this.requested_date,
+          {"date_time":this.date_time,
           "init_time": this.init_time,
           "final_time": this.final_time,
-          "subject": this.subject,
           "description": this.description,
-          "operator": this.operator,
-          "teacher_admin":this.teacher_admin
           }
         
           );
         var config = {
         method: 'post',
-        url: 'http://127.0.0.1:5001/reservation',
+        url: 'http://127.0.0.1:5001/worklog',
         headers: { 
             'x-access-token': this.token, 
             'Authorization': 'Basic QWRtaW46MTIzNDU=', 
