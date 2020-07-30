@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Inventary />
+    <Avery />
     <!--Inventary/-->
     <!--Reservation /-->
     <!--Palmadas /-->
@@ -15,12 +15,13 @@ import Reservation from './components/Reservation';
 import Palmadas from './components/Palmadas'
 import Worklog from './components/Worklog'
 import Inventary from './components/Inventary'
+import Avery from './components/Avery'
 
 export default {
   name: 'App',
   components: {
     //ogIn
-    Inventary
+    Avery
     //Reservation
     //Palmadas
   }
