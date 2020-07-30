@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <!-- LogIn /-->
-    <Worklog/>
+    <Inventary />
+    <!--Inventary/-->
     <!--Reservation /-->
     <!--Palmadas /-->
   </div>
@@ -14,12 +14,13 @@ import Register from './components/Register';
 import Reservation from './components/Reservation';
 import Palmadas from './components/Palmadas'
 import Worklog from './components/Worklog'
+import Inventary from './components/Inventary'
 
 export default {
   name: 'App',
   components: {
     //ogIn
-    Worklog
+    Inventary
     //Reservation
     //Palmadas
   }
