@@ -1,31 +1,26 @@
 <template>
-  <form @submit.prevent="palmadas">
+  <form @submit.prevent="reservation">
     <div class="grid-container">
         <input type="text" v-model="request_date" name="request_date" placeholder="Request Date">      
     </div>
 
     <div class="grid-container">
-        <input type="text" v-model="reserved_date" name="reserved_date" placeholder="Reserved Date">      
+        <input type="text" v-model="requested_date" name="requested_date" placeholder="Requested Date">      
     </div>
 
     <div class="grid-container">
-        <input type="text" v-model="init_time" name="init_time" placeholder="Initialization Time">      
+        <input type="text" v-model="description" name="description" placeholder="Description">      
     </div>
 
     <div class="grid-container">
-        <input type="text" v-model="final_time" name="final_time" placeholder="Finalization Time">      
+        <input type="text" v-model="lab" name="lab" placeholder="Laboratory">      
     </div>
-
-    <div class="grid-container">
-        <input type="text" v-model="subject" name="subject" placeholder="Subject">      
-    </div>
-
     <div class="grid-container">
         <input type="text" v-model="token" name="token" placeholder="Token">      
     </div>
 
     <div class="grid-container">
-        <input type="submit" value="Send AllNighter Request" class="btn">
+        <input type="submit" value="Make Reservation" class="btn">
     </div>
   </form>
 </template>
@@ -34,14 +29,18 @@
 import axios from 'axios';
 
 export default {
-  name: 'Palmadas',
+  name: 'AllNighter',
   data(){
     return{
       request_date: '',
-      reserved_date: '',
+      requested_date: '',
+      requesting_user: '',
       init_time: '',
       final_time: '',
       subject: '',
+      description: '',
+      lab: '',
+      operator: '',
       token: '',
       posts: [],
       errors: [],
@@ -49,24 +48,20 @@ export default {
   },
 
   methods: {
-    palmadas()
+    reservation()
     {
         var data = JSON.stringify(
 
           {"request_date":this.request_date,
           "requested_date":this.requested_date,
-          "init_time": this.init_time,
-          "final_time": this.final_time,
-          "subject": this.subject,
           "description": this.description,
-          "operator": this.operator,
-          "teacher_admin":this.teacher_admin
+          "lab": this.lab,
           }
-        
+
           );
         var config = {
         method: 'post',
-        url: 'http://127.0.0.1:5001/reservation',
+        url: 'http://127.0.0.1:5001/allnighter',
         headers: { 
             'x-access-token': this.token, 
             'Authorization': 'Basic QWRtaW46MTIzNDU=', 

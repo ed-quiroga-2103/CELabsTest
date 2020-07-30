@@ -44,7 +44,7 @@
     </div>
 
     <div class="grid-container">
-        <input type="submit" value="Made Reservation" class="btn">
+        <input type="submit" value="Make Reservation" class="btn">
     </div>
   </form>
 </template>s
