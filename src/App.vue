@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Reservation />
+    <ShowReservations />
     <!-- Register / -->
     <!-- <Reservation /> -->
   </div>
@@ -11,13 +11,15 @@
 import LogIn from './components/LogIn';
 import Register from './components/Register';
 import Reservation from './components/Reservation';
+import ShowReservations from './components/ShowReservations';
+import AllNighters from './components/AllNighters'
 
 export default {
   name: 'App',
   components: {
     //LogIn
     //Register
-    Reservation
+    ShowReservations
   }
 }
 </script>
