@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <Reservation />
+    <ShowReservations />
     <!-- Register / -->
     <!-- <Reservation /> -->
+>>>>>>> 309c1dfc3b6e11931f33068ec38148d7f6db6b11
   </div>
 </template>
 
@@ -15,13 +16,17 @@ import ShowReservations from './components/ShowReservations';
 import AllNighters from './components/AllNighters'
 import Worklog from './components/Worklog'
 import Inventary from './components/Inventary'
+import Avery from './components/Avery'
 
 export default {
   name: 'App',
   components: {
+    //ogIn
+    //Reservation
+    //Palmadas
     //LogIn
     //Register
-    Reservation
+    ShowReservations
   }
 }
 </script>
