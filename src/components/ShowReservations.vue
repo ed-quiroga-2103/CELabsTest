@@ -3,6 +3,9 @@
         <h3>Reservations</h3>
         <form @submit.prevent="login">
             <div class="grid-container">
+                <input class="text" type="text" v-model="path" name="path" placeholder="Path">
+            </div>
+            <div class="grid-container">
                 <input class="text" type="text" v-model="token" name="Token" placeholder="Token">
             </div>
         </form>
@@ -22,6 +25,7 @@ export default {
   data(){
     return{
       token: '',
+      path: '',
       posts: [],
       errors: [],
       info: ''
@@ -35,7 +39,7 @@ export default {
         var data = '';
         var config = {
         method: 'get',
-        url: 'http://127.0.0.1:5001/reservation',
+        url: 'http://127.0.0.1:5001/' + this.path,
         headers: { 
             'x-access-token': this.token, 
             'Authorization': 'Basic QWRtaW46MTIzNDU=', 

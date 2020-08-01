@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ShowReservations />
+    <Reservation />
     <!-- Register / -->
     <!-- <Reservation /> -->
   </div>
@@ -13,7 +13,6 @@ import Register from './components/Register';
 import Reservation from './components/Reservation';
 import ShowReservations from './components/ShowReservations';
 import AllNighters from './components/AllNighters'
-import Palmadas from './components/Palmadas'
 import Worklog from './components/Worklog'
 import Inventary from './components/Inventary'
 
@@ -22,7 +21,7 @@ export default {
   components: {
     //LogIn
     //Register
-    ShowReservations
+    Reservation
   }
 }
 </script>
